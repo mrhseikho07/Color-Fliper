@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color||Flipper</title>
+    <style>
+        #btn {
+            cursor: pointer;
+        }
+
+        h1 {
+            background-color: gray;
+            height: 50px;
+            width: 450px;
+            border-radius: .2rem;
+            padding: 8px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #btn {
+            margin-left: 180px;
+
+        }
+
+        .center {
+            margin: auto;
+            width: 50%;
+            margin: 250px 0px 0px 400px;
+            /* border: 3px solid green; */
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <h1>BackgroundColour: <span class="colour">#f15025</span></h1>
+        <button id="btn">ClickMe</button>
+    </div>
+</body>
+<script>
+    const color = ["yellow", "green", "cyan", "black", "crimson"]
+    const btn = document.getElementById("btn");
+    const colour = document.querySelector(".colour");
+    btn.addEventListener("click", function () {
+        const randomNumber = getRandomNumber();
+        document.body.style.backgroundColor = color[randomNumber];
+        colour.innerHTML = color[randomNumber];
+    });
+    function getRandomNumber() {
+        return Math.floor(Math.random() * color.length);
+    };
+</script>
+
+</html>
